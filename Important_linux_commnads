@@ -1,0 +1,210 @@
+Linux Command Cheat Sheet
+
+Basic Commands
+
+cd: Change directory.
+
+touch: Create a file or modify its timestamp.
+
+file: Identify the type of a file.
+
+echo: Print text to the terminal.
+
+cat: View the full contents of a file.
+
+cp: Copy files from one directory to another.
+
+mv: Move or rename files.
+
+ls: List files and directories in the current directory.
+
+pwd: Show the present working directory.
+
+ls -la: List files in long format with detailed information.
+
+less: View large files page by page (allows scrolling up and down).
+
+more: View large files page by page (cannot scroll up).
+
+tail: View the last lines of a file.
+
+head: View the first n lines of a file.
+
+man: View the manual pages for a command.
+
+help: Show help for a command (similar to man).
+
+Redirection
+
+>: Redirect standard output to a file (overwrite).
+
+>>: Redirect standard output to a file (append).
+
+<: Redirect input from a file.
+
+2>: Redirect error messages to a file.
+
+2>&1 or &>: Redirect both standard output and error to a file.
+
+Background Processes
+
+nohup: Run a command immune to hangups, with output to a file.
+
+disown: Remove jobs from the shell's job table (used with background jobs).
+
+Append & to run a command in the background.
+
+Pipes and Filters
+
+|: Pipe output of one command as input to another.
+
+grep: Search for patterns in files.
+
+sed: Stream editor for searching, deleting, inserting, and replacing text.
+
+Use with caution: sed -i modifies files in place.
+
+Use sed -n to print specific patterns.
+
+cut: Extract sections from each line of input.
+
+tr: Translate or delete characters.
+
+tee: Redirect output to multiple destinations.
+
+System Monitoring
+
+top: View live processes and resource usage.
+
+htop: Interactive process viewer (alternative to top).
+
+df: Show disk space usage.
+
+find: Locate files (e.g., find / -name "filename").
+
+lsblk: List block devices.
+
+free: Show memory usage.
+
+vmstat: Report system performance.
+
+File Permissions
+
+chmod: Change file permissions.
+
+chown: Change file owner.
+
+chgrp: Change file group.
+
+Permission Values
+
+Read = 4
+
+Write = 2
+
+Execute = 1
+
+Example: 777 means full read, write, execute for user, group, and others.
+
+Special Permissions
+
+Setuid (set user ID): Execute file with owner's privileges (chmod u+s filename).
+
+Setgid (set group ID): Execute file with group's privileges.
+
+Sticky bit: Only file owner can delete/modify files in a directory with 777 permissions.
+
+User Management
+
+adduser / useradd: Add a new user.
+
+usermod: Modify an existing user.
+
+userdel: Delete a user.
+
+addgroup: Add a new group.
+
+passwd: Change user password.
+
+sudo: Execute commands as superuser.
+
+su -s user: Switch user.
+
+Process Management
+
+nohup: Run process in background ignoring hangup signals.
+
+jobs: List current shell jobs (running, stopped).
+
+ps aux: Snapshot of running processes with CPU, memory, PID.
+
+kill: Terminate a process by PID.
+
+kill -9: Forcefully terminate a process.
+
+nice: Start a process with a given priority.
+
+renice: Change priority of existing processes (-20 highest, 19 lowest).
+
+Signals
+
+SIGKILL: Force kill.
+
+SIGTERM: Graceful shutdown.
+
+SIGINT: Interrupt (Ctrl + C).
+
+SIGSTOP: Pause process.
+
+SIGCONT: Resume paused process.
+
+Scheduling Tasks
+
+cron jobs: Schedule tasks to run at specific times.
+
+crontab -e: Edit cron jobs.
+
+Cron Format
+
+* * * * * /full/path/to/script_or_command
+
+Other Useful Commands
+
+timedatectl: View and manage system time settings.
+
+lsof: List open files by processes.
+
+
+Filesystem Check
+
+fsck /dev/sdX: Check and repair filesystem consistency on the specified device.
+
+Swap Management
+
+Swap acts like RAM on disk; when RAM is full, swap space is used to keep applications running smoothly and avoid system crashes.
+
+mkswap: Initialize swap space.
+
+swapon /dev/sdX: Enable swap on the specified device.
+
+swapoff /dev/sdX: Disable swap on the specified device.
+Networking
+
+ss - Display socket statistics (ports, connections)
+
+traceroute - Trace packet route
+
+ping - Send echo requests to test connectivity (e.g., ping -c 3 google.com)
+
+ifconfig - Display network interfaces and IP addresses
+
+arp - Show IP to MAC address mappings
+
+route -n - Show routing table
+
+tcpdump -i interface - Capture network packets
+
+Debugging
+
+strace - Trace system calls from user to kernel mode
+
