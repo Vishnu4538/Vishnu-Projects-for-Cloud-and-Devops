@@ -6,7 +6,6 @@ spec:
   selector:
     matchLabels:
       app: mongo # has to match .spec.template.metadata.labels
-  serviceName: "nginx"
   replicas: 1 # by default is 1
   minReadySeconds: 10 # by default is 0
   template:
