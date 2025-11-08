@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: argocd-web-deployment
+  name: webapp-deployment
   labels:
     app: webapp
 spec:
@@ -19,12 +19,4 @@ spec:
         image: docker.io/vishnu4538/nginxapp:27
         ports:
         - containerPort: 80
-      affinity:
-         nodeAffinity:
-           requiredDuringSchedulingIgnoredDuringExecution:
-             nodeSelectorTerms:
-             - matchExpressions:
-                - key: nodename
-                  operator: In
-                  values:
-                    - app-worker2
+
