@@ -1,7 +1,10 @@
 import yaml
 
 
-#example for createing yaml using
+#example for created nested dict and used in yaml module to generate the yaml file
+
+#child dictonary
+
 metadate={
      "labels":{
          "app": "webappp",
@@ -12,11 +15,17 @@ metadate={
 spec={
     "template":{
         "spec": {
-            "container":["image: docker.io/vishnu4538/nginxapp:8","name: website"]
+            "container":{
+                         "image":"docker.io/vishnu4538/nginxapp:8" ,
+                          "name": "website" ,
+                          "port": [80 , 9000, 700]
+            }
         }
     }
 }
 
+
+# main dictonary for abov child dictonary 
 data={
 
     "metadate":metadate,
@@ -32,4 +41,4 @@ yaml.safe_dump(data,f)
 f=open("demo.yaml", "r")
 r=yaml.safe_load(f)
 
-print(r["spec"]["template"]["spec"]["container"][0])
+print(r["spec"]["template"]["spec"]["container"]["image"])

@@ -6,5 +6,9 @@ spec:
   template:
     spec:
       container:
-      - 'image: docker.io/vishnu4538/nginxapp:8'
-      - 'name: website'
+        image: docker.io/vishnu4538/nginxapp:8
+        name: website
+        port:
+        - 80
+        - 9000
+        - 700
