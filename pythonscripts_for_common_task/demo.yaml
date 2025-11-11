@@ -1,0 +1,14 @@
+metadate:
+  labels:
+    app: webappp
+    name: webappp
+spec:
+  template:
+    spec:
+      container:
+        image: docker.io/vishnu4538/nginxapp:8
+        name: website
+        port:
+        - 80
+        - 9000
+        - 700
