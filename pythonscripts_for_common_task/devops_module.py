@@ -1,4 +1,3 @@
-# Below script is used to search the pattern in file use for in window environment.
 import yaml
 
 def patter_match(pattern,filename):
@@ -15,9 +14,6 @@ def patter_match(pattern,filename):
         else:
             continue
 
-# you can use below script in CICD to update the image without manual.
-
-
 def update_image(id,filename):
   try:
     f = open(filename, "r")
@@ -33,8 +29,4 @@ def update_image(id,filename):
     f=open(filename,"r")
     r=yaml.safe_load(f)
     print(f"Image changed to {id}")
-    print(f"image value after change is {r["spec"]["template"]["spec"]["containers"][0]["image"]}")
-
-
-
-
+    print(r)
